@@ -1,0 +1,108 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="end" class="menu-burguer">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-img src="../../assets/images/aliadas-logo.png" class="logo"></ion-img>
+  </ion-toolbar>
+  <ion-img src="../../assets/images/color-top.jpg" class="bar-logo"></ion-img>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large"></ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <section class="head-data">
+    <div>
+      <p class="head-data-title">$1'000.000</p>
+      <p class="head-data-subtitle">SALARIO MÍNIMO 2022</p>
+    </div>
+    <div>
+      <p class="head-data-title">$117.172</p>
+      <p class="head-data-subtitle">AUXILIO DE TRANSPORTE</p>
+    </div>
+  </section>
+
+  <section>
+
+    <form [formGroup]="formularioPrincipal" (ngSubmit)="recogerInformacion()" class="form-container">
+
+      <p class="title-form">Datos Principales</p>
+      <p class="text-form">Para comenzar, ingreas los siguientes datos:</p>
+
+      <ion-item>
+        <ion-label position="stacked">Fecha de Inicio</ion-label>
+        <ion-input type="date" formControlName="fechaInicio"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="stacked">Fecha Finalización</ion-label>
+        <ion-input type="date" formControlName="fechaFin"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="stacked">Tipo de Trabajo</ion-label>
+        <ion-select formControlName="tipoTrabajo">
+          <ion-select-option>Tiempo completo</ion-select-option>
+          <ion-select-option>Por días</ion-select-option>
+          <ion-select-option>Por horas</ion-select-option>
+        </ion-select>
+      </ion-item>
+      <ion-item>
+        <ion-label position="stacked">Salario Mensual</ion-label>
+        <ion-input type="number" formControlName="salarioMensual"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="stacked">Otras Formas de Pago</ion-label>
+        <ion-input type="number" formControlName="otrasFormasDePago"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="stacked">¿Qué desea calcular?</ion-label>
+        <ion-select name="calculoDeseado" formControlName="calculoDeseado">
+          <ion-select-option>Cesantías e Intereses</ion-select-option>
+          <ion-select-option>Prima</ion-select-option>
+          <ion-select-option>Vacaciones</ion-select-option>
+          <ion-select-option>Todos los Valores</ion-select-option>
+        </ion-select>
+      </ion-item>
+      <input type="submit" value="Calcular" class="btn-next">
+    </form>
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- 
+    <form>
+
+    </form>
+    <ion-item>
+      <ion-label position="stacked">Días trabajados por semana</ion-label>
+      <ion-input type="number"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="stacked">Hora trabajadas por día</ion-label>
+      <ion-input type="number"></ion-input>
+    </ion-item>
+
+    <input type="submit" value="Siguiente" class="btn-next">
+
+    <ion-item>
+      <ion-label position="stacked">Salario Pactado por Días</ion-label>
+      <ion-input type="number"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="stacked">Salario Pactado por Horas</ion-label>
+      <ion-input type="number"></ion-input>
+    </ion-item>
+  </section> -->

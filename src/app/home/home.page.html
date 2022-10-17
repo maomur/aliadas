@@ -1,0 +1,61 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="end" class="menu-burguer">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-img src="../../assets/images/aliadas-logo.png" class="logo"></ion-img>
+  </ion-toolbar>
+  <ion-img src="../../assets/images/color-top.jpg" class="bar-logo"></ion-img>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large"></ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-content class="align-content">
+    <ion-grid class="mainColor">
+      <ion-row>
+        <ion-col class="grid">
+          <img src="../../assets/images/bt-calculadoras.png" alt="Botón Calculadora" [routerLink]="['/calculadora']">
+        </ion-col>
+        <ion-col class="grid">
+          <img src="../../assets/images/bt-derechos.png" alt="Botón Mis Derechos" [routerLink]="['/misderechos']">
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col class=" grid">
+          <img src="../../assets/images/bt-entidades.png" alt="Guía Entidades" [routerLink]="['/guiaentidades']">
+        </ion-col>
+        <ion-col class="grid">
+          <img src="../../assets/images/bt-actualidad.png" alt="Botón Noticias" [routerLink]="['/noticias']">
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col class="grid">
+          <img src="../../assets/images/bt-violencia.png" alt="Botón Violencia y Acoso"
+            [routerLink]="['/violenciaacoso']">
+        </ion-col>
+        <ion-col class="grid">
+          <img src="../../assets/images/bt-libertad-sindical.png" alt="Botón Libertad Sindical"
+            [routerLink]="['/libertadsindical']">
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col class="grid">
+          <img src="../../assets/images/bt-denuncia.png" alt="Botón Denuncias" [routerLink]="['/denuncias']">
+        </ion-col>
+        <ion-col class="grid">
+          <img src="../../assets/images/bt-white.png" alt="Aliadas">
+        </ion-col>
+      </ion-row>
+
+
+    </ion-grid>
+
+  </ion-content>

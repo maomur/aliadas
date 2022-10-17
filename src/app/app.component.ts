@@ -6,13 +6,26 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   public appPages = [
-    { title: 'Inbox', url: '/folder/Inbox', icon: 'mail' },
-    { title: 'Outbox', url: '/folder/Outbox', icon: 'paper-plane' },
-    { title: 'Favorites', url: '/folder/Favorites', icon: 'heart' },
-    { title: 'Archived', url: '/folder/Archived', icon: 'archive' },
-    { title: 'Trash', url: '/folder/Trash', icon: 'trash' },
-    { title: 'Spam', url: '/folder/Spam', icon: 'warning' },
+    { title: 'Home', url: '/home', icon: 'home' },
+    { title: 'Calculadora', url: '/calculadora', icon: 'calculator' },
+    { title: 'Mis Derechos', url: '/misderechos', icon: 'book' },
+    { title: 'Guía de Entidades', url: '/guiaentidades', icon: 'list' },
+    { title: 'Violencia y Acoso', url: '/violenciaacoso', icon: 'remove-circle' },
+    { title: 'Libertad Sindical', url: '/libertadsindical', icon: 'people' },
+    { title: 'Actualidad', url: '/noticias', icon: 'megaphone' },
+    { title: 'Denuncia', url: '/denuncias', icon: 'warning' },
+    { title: 'Organizaciones que nos apoyan', url: '/organizaciones', icon: 'heart' },
+    { title: 'Sobre Aliadas', url: '/sobrealiadas', icon: 'thumbs-up' },
+    { title: 'Términos y Condiciones', url: '/privacidad', icon: 'document' }
   ];
-  public labels = ['Family', 'Friends', 'Notes', 'Work', 'Travel', 'Reminders'];
-  constructor() {}
+  arrFormularioPrincipal: any[];
+  constructor() {
+    this.arrFormularioPrincipal = [
+      {
+        fechaInicio: "",
+        fechaFin: "",
+        tipoTrabajo: ""
+      }
+    ]
+  }
 }
