@@ -1,0 +1,103 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="end" class="menu-burguer">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-img src="../../assets/images/aliadas-logo.png" class="logo"></ion-img>
+  </ion-toolbar>
+  <ion-img src="../../assets/images/color-top.jpg" class="bar-logo"></ion-img>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large"></ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <section class="head-data">
+    <div>
+      <p class="head-data-title">Tus Resultados:</p>
+      <p class="head-data-subtitle">Calculadora Salarial
+    </div>
+  </section>
+
+  <section class="form-container">
+    <h2 class="titulo-bloque">Información General</h2>
+    <div class="bloque-data">
+      <div>
+        <h3>Fecha Inicial</h3>
+        <h4>{{fechaInicio}}</h4>
+      </div>
+      <div>
+        <h3>Fecha Final</h3>
+        <h4>{{fechaFin}}</h4>
+      </div>
+    </div>
+
+
+    <div class="bloque-data">
+      <div>
+        <h3>Días Trabajados</h3>
+        <h4>{{diasTrabajados}}</h4>
+      </div>
+      <div>
+        <h3>Salario Mensual</h3>
+        <h4>{{salarioMensual}}</h4>
+      </div>
+    </div>
+
+
+
+    <div class="bloque-data">
+      <div>
+        <h3>Auxilio de Transporte</h3>
+        <h4>{{auxilioTransporte}}</h4>
+      </div>
+      <div>
+        <h3>Deducciones</h3>
+        <h4>{{deducciones}}</h4>
+      </div>
+    </div>
+
+    <div class="bloque-data">
+      <div>
+        <h3>Otros Pagos Recibidos</h3>
+        <h4>{{otrosPagos}}</h4>
+      </div>
+      <div>
+        <h3>Salario Recibido</h3>
+        <h4>{{salarioRecibido}}</h4>
+      </div>
+    </div>
+
+  </section>
+
+
+  <section class="form-container">
+    <h2 class="titulo-bloque">Tu Liquidación</h2>
+    <div class="resultados">
+      <h4>Cesantías:</h4>
+      <h4>{{cesantias}}</h4>
+    </div>
+    <div class="resultados">
+      <h4>Intereses Cesantías:</h4>
+      <h4>{{interesesCesantias}}</h4>
+    </div>
+    <div class="resultados">
+      <h4>Prima:</h4>
+      <h4>{{prima}}</h4>
+    </div>
+    <div class="resultados">
+      <h4>Vacaciones:</h4>
+      <h4>{{vacaciones}}</h4>
+    </div>
+    <h2 class="titulo-total">Total: {{totalLiquidacion}} *</h2>
+    <ion-button>Descargar</ion-button>
+
+  </section>
+
+  <p class="texto-aclaracion">
+    *Los cálculos generados por esta calculadora, no compromenten Lorem ipsum dolor sit, amet consectetur adipisicing
+    elit. Omnis quo culpa asperiores ipsa accusamus.
+  </p>

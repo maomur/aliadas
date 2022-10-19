@@ -31,17 +31,22 @@
     <form [formGroup]="formularioPrincipal" (ngSubmit)="recogerInformacion()" class="form-container">
 
       <p class="title-form">Datos Principales</p>
-      <p class="text-form">Para comenzar, ingreas los siguientes datos:</p>
+      <p class="text-form">Para comenzar, ingresa los siguientes campos:</p>
 
-      <ion-item>
-        <ion-label position="stacked">Fecha de Inicio</ion-label>
-        <ion-input type="date" formControlName="fechaInicio"></ion-input>
-      </ion-item>
 
-      <ion-item>
-        <ion-label position="stacked">Fecha Finalización</ion-label>
-        <ion-input type="date" formControlName="fechaFin"></ion-input>
-      </ion-item>
+      <mat-form-field appearance="fill">
+        <mat-label>Fecha Inicio</mat-label>
+        <input matInput [matDatepicker]="picker" formControlName="fechaInicio">
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+      </mat-form-field>
+
+      <mat-form-field appearance="fill">
+        <mat-label>Fecha Fin</mat-label>
+        <input matInput [matDatepicker]="pickerf" formControlName="fechaFin">
+        <mat-datepicker-toggle matSuffix [for]="pickerf"></mat-datepicker-toggle>
+        <mat-datepicker #pickerf></mat-datepicker>
+      </mat-form-field>
 
       <ion-item>
         <ion-label position="stacked">Tipo de Trabajo</ion-label>
@@ -51,10 +56,22 @@
           <ion-select-option>Por horas</ion-select-option>
         </ion-select>
       </ion-item>
+
       <ion-item>
         <ion-label position="stacked">Salario Mensual</ion-label>
         <ion-input type="number" formControlName="salarioMensual"></ion-input>
       </ion-item>
+
+      <!-- <ion-item>
+        <ion-label position="stacked">Fecha de Inicio</ion-label>
+        <ion-input type="date" formControlName="fechaInicio"></ion-input>
+      </ion-item> -->
+
+      <!-- <ion-item>
+        <ion-label position="stacked">Fecha Finalización</ion-label>
+        <ion-input type="date" formControlName="fechaFin"></ion-input>
+      </ion-item> -->
+
       <ion-item>
         <ion-label position="stacked">Otras Formas de Pago</ion-label>
         <ion-input type="number" formControlName="otrasFormasDePago"></ion-input>
@@ -68,41 +85,7 @@
           <ion-select-option>Todos los Valores</ion-select-option>
         </ion-select>
       </ion-item>
-      <input type="submit" value="Calcular" class="btn-next">
-    </form>
 
-
-
-
-
-
-
-
-
-
-
-
-    <!-- 
-    <form>
+      <input type="submit" value="Calcular" class="btn-next" [routerLink]="['/result']">
 
     </form>
-    <ion-item>
-      <ion-label position="stacked">Días trabajados por semana</ion-label>
-      <ion-input type="number"></ion-input>
-    </ion-item>
-    <ion-item>
-      <ion-label position="stacked">Hora trabajadas por día</ion-label>
-      <ion-input type="number"></ion-input>
-    </ion-item>
-
-    <input type="submit" value="Siguiente" class="btn-next">
-
-    <ion-item>
-      <ion-label position="stacked">Salario Pactado por Días</ion-label>
-      <ion-input type="number"></ion-input>
-    </ion-item>
-    <ion-item>
-      <ion-label position="stacked">Salario Pactado por Horas</ion-label>
-      <ion-input type="number"></ion-input>
-    </ion-item>
-  </section> -->

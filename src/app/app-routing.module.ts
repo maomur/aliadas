@@ -91,6 +91,11 @@ const routes: Routes = [
     path: 'misderechos-salarios',
     loadChildren: () => import('./misderechos-salarios/misderechos-salarios.module').then(m => m.MisderechosSalariosPageModule)
   },
+  {
+    path: 'result',
+    loadChildren: () => import('./result/result.module').then(m => m.ResultPageModule)
+  },
+
 ];
 
 @NgModule({
