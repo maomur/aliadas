@@ -28,7 +28,8 @@
 
   <section>
 
-    <form [formGroup]="formularioPrincipal" (ngSubmit)="recogerInformacion()" class="form-container">
+    <form novalidate [formGroup]="formularioPrincipal" (ngSubmit)="recogerInformacion(formularioPrincipal)"
+      class="form-container">
 
       <p class="title-form">Datos Principales</p>
       <p class="text-form">Para comenzar, ingresa los siguientes campos:</p>
@@ -40,6 +41,9 @@
         <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
         <mat-datepicker #picker></mat-datepicker>
       </mat-form-field>
+      <p *ngIf="formularioPrincipal.get('fechaInicio')?.hasError('required') && formularioPrincipal.get('fechaInicio')?.touched"
+        class="validadores">Este campo es
+        obligatorio</p>
 
       <mat-form-field appearance="fill">
         <mat-label>Fecha Fin</mat-label>
@@ -47,45 +51,78 @@
         <mat-datepicker-toggle matSuffix [for]="pickerf"></mat-datepicker-toggle>
         <mat-datepicker #pickerf></mat-datepicker>
       </mat-form-field>
+      <p *ngIf="formularioPrincipal.get('fechaFin')?.hasError('required') && formularioPrincipal.get('fechaFin')?.touched"
+        class="validadores">Este campo es
+        obligatorio</p>
 
       <ion-item>
         <ion-label position="stacked">Tipo de Trabajo</ion-label>
-        <ion-select formControlName="tipoTrabajo">
-          <ion-select-option>Tiempo completo</ion-select-option>
-          <ion-select-option>Por días</ion-select-option>
-          <ion-select-option>Por horas</ion-select-option>
+        <ion-select formControlName="tipoTrabajo" (ionChange)="selectorSalario($event)">
+          <ion-select-option value="tiempo-completo">Tiempo completo</ion-select-option>
+          <ion-select-option value="por-dias">Por días</ion-select-option>
+          <ion-select-option value="por-horas">Por horas</ion-select-option>
         </ion-select>
       </ion-item>
+      <p *ngIf="formularioPrincipal.get('tipoTrabajo')?.hasError('required') && formularioPrincipal.get('tipoTrabajo')?.touched"
+        class="validadores">Este campo es
+        obligatorio</p>
 
-      <ion-item>
-        <ion-label position="stacked">Salario Mensual</ion-label>
-        <ion-input type="number" formControlName="salarioMensual"></ion-input>
+
+
+      <ion-item *ngIf="isShowMes">
+        <ion-label position="stacked">Tu Salario Mensual:</ion-label>
+        <ion-input type="text" formControlName="salarioMensual" placeholder="$"></ion-input>
       </ion-item>
+      <p *ngIf="formularioPrincipal.get('salarioMensual')?.hasError('required') && formularioPrincipal.get('salarioMensual')?.touched"
+        class="validadores">Este campo es
+        obligatorio</p>
+      <p *ngIf="formularioPrincipal.get('salarioMensual')?.hasError('pattern') && formularioPrincipal.get('salarioMensual')?.touched"
+        class="validadores">Escribe sólo números, sin puntos, comas o signos.</p>
 
-      <!-- <ion-item>
-        <ion-label position="stacked">Fecha de Inicio</ion-label>
-        <ion-input type="date" formControlName="fechaInicio"></ion-input>
-      </ion-item> -->
 
-      <!-- <ion-item>
-        <ion-label position="stacked">Fecha Finalización</ion-label>
-        <ion-input type="date" formControlName="fechaFin"></ion-input>
-      </ion-item> -->
+
+      <ion-item *ngIf="isShowHora">
+        <ion-label position="stacked">Salario pactado por hora:</ion-label>
+        <ion-input type="text" formControlName="salarioPorHora" placeholder="$"></ion-input>
+      </ion-item>
+      <p *ngIf="formularioPrincipal.get('salarioPorHora')?.hasError('required') && formularioPrincipal.get('salarioPorHora')?.touched"
+        class="validadores">Este campo es
+        obligatorio</p>
+      <p *ngIf="formularioPrincipal.get('salarioPorHora')?.hasError('pattern') && formularioPrincipal.get('salarioPorHora')?.touched"
+        class="validadores">Escribe sólo números, sin puntos, comas o signos.</p>
+
+
+
+
+
+      <ion-item *ngIf="isShowDia">
+        <ion-label position="stacked">Salario pactado por día:</ion-label>
+        <ion-input type="text" formControlName="salarioPorDia" placeholder="$"></ion-input>
+      </ion-item>
+      <p *ngIf="formularioPrincipal.get('salarioPorDia')?.hasError('required') && formularioPrincipal.get('salarioPorDia')?.touched"
+        class="validadores">Este campo es
+        obligatorio</p>
+      <p *ngIf="formularioPrincipal.get('salarioPorDia')?.hasError('pattern') && formularioPrincipal.get('salarioPorDia')?.touched"
+        class="validadores">Escribe sólo números, sin puntos, comas o signos.</p>
+
 
       <ion-item>
         <ion-label position="stacked">Otras Formas de Pago</ion-label>
         <ion-input type="number" formControlName="otrasFormasDePago"></ion-input>
       </ion-item>
-      <ion-item>
-        <ion-label position="stacked">¿Qué desea calcular?</ion-label>
-        <ion-select name="calculoDeseado" formControlName="calculoDeseado">
-          <ion-select-option>Cesantías e Intereses</ion-select-option>
-          <ion-select-option>Prima</ion-select-option>
-          <ion-select-option>Vacaciones</ion-select-option>
-          <ion-select-option>Todos los Valores</ion-select-option>
-        </ion-select>
-      </ion-item>
 
-      <input type="submit" value="Calcular" class="btn-next" [routerLink]="['/result']">
+
+      <input *ngIf="buttonInactive" type="submit" value="Calcular" class="btn-inactive"
+        [disabled]="!formularioPrincipal.valid" (click)="onSubmitMes()">
+
+
+      <input *ngIf="buttonMes" type="submit" value="Calcular Mes" class="btn-next"
+        [disabled]="!formularioPrincipal.valid" (click)="onSubmitMes()">
+
+      <input *ngIf="buttonDia" type="submit" value="Calcular Dia" class="btn-next"
+        [disabled]="!formularioPrincipal.valid" (click)="onSubmitDia()">
+
+      <input *ngIf="buttonHora" type="submit" value="Calcular Hora" class="btn-next"
+        [disabled]="!formularioPrincipal.valid" (click)="onSubmitHora()">
 
     </form>

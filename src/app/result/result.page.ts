@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ValoresService } from '../services/valores.service';
+
 
 @Component({
   selector: 'app-result',
@@ -7,23 +9,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ResultPage implements OnInit {
 
-  constructor() { }
+  dataAll: any[] = [];
 
   ngOnInit() {
+
   }
 
-  fechaInicio: string = "0";
-  fechaFin: string = "0";
-  diasTrabajados: number = 0;
-  salarioMensual: number = 0;
-  auxilioTransporte: number = 0;
-  deducciones: number = 0;
-  otrosPagos: number = 0;
-  salarioRecibido: number = 0;
-  cesantias: number = 0;
-  interesesCesantias: number = 0;
-  prima: number = 0;
-  vacaciones: number = 0;
-  totalLiquidacion: number = 0;
+  constructor(private valoresServices: ValoresService) {
+    this.dataAll = this.valoresServices.getAll();
+    console.log('CONSOLE LOG CONSTRUCTOR', this.dataAll)
+  }
+
+  diasLaborados: number;
+  salarioMensual: any = 0;
+  auxilioTransporte: number = 117172;
+  otrasFormasDePago: number = 0;
+  baseSalarial: number = this.salarioMensual + this.auxilioTransporte + this.otrasFormasDePago;
 
 }

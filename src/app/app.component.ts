@@ -7,7 +7,7 @@ import { Component } from '@angular/core';
 export class AppComponent {
   public appPages = [
     { title: 'Home', url: '/home', icon: 'home' },
-    { title: 'Calculadora', url: '/calculadora', icon: 'calculator' },
+    { title: 'Calculadora', url: '/resultados', icon: 'calculator' },
     { title: 'Mis Derechos', url: '/misderechos', icon: 'book' },
     { title: 'Guía de Entidades', url: '/guiaentidades', icon: 'list' },
     { title: 'Violencia y Acoso', url: '/violenciaacoso', icon: 'remove-circle' },
@@ -16,7 +16,7 @@ export class AppComponent {
     { title: 'Denuncia', url: '/denuncias', icon: 'warning' },
     { title: 'Organizaciones que nos apoyan', url: '/organizaciones', icon: 'heart' },
     { title: 'Sobre Aliadas', url: '/sobrealiadas', icon: 'thumbs-up' },
-    { title: 'Términos y Condiciones', url: '/privacidad', icon: 'document' }
+    { title: 'Términos y Condiciones', url: '/privacidad', icon: 'document' },
   ];
   arrFormularioPrincipal: any[];
   constructor() {

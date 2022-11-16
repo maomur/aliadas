@@ -79,10 +79,35 @@
     border: none;
 }
 
+.btn-inactive {
+    background-color: #b3b3b3;
+    text-align: center;
+    color: rgb(201, 201, 201);
+    width: 100%;
+    padding: 15px 30px;
+    margin-top: 8px;
+    border: none;
+}
+
 .mat-form-field {
     display: inline-block;
     position: relative;
     text-align: left;
     width: 100%;
     background-color: white;
+}
+
+.validadores {
+    padding: 1.3em;
+    font-size: 0.8em;
+    color: red;
+    background: rgb(255, 212, 212)
+}
+
+.ocultar {
+    display: none;
+}
+
+.mostrar {
+    display: block;
 }

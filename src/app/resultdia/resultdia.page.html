@@ -18,7 +18,7 @@
   <section class="head-data">
     <div>
       <p class="head-data-title">Tus Resultados:</p>
-      <p class="head-data-subtitle">Ingreso Mensual</p>
+      <p class="head-data-subtitle">Pacto Ingreso por dia</p>
     </div>
   </section>
 
@@ -38,8 +38,8 @@
 
     <div class="bloque-data" *ngFor="let data of dataAll">
       <div>
-        <h3>Días Laborados</h3>
-        <h4>{{diasLaborados}}</h4>
+        <h3>Días Trabajados</h3>
+        <h4>{{data.diasTranscurridos}}</h4>
       </div>
       <div>
         <h3>Salario Mensual</h3>

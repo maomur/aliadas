@@ -95,6 +95,22 @@ const routes: Routes = [
     path: 'result',
     loadChildren: () => import('./result/result.module').then(m => m.ResultPageModule)
   },
+  {
+    path: 'dialog-box',
+    loadChildren: () => import('./dialog-box/dialog-box.module').then( m => m.DialogBoxPageModule)
+  },
+  {
+    path: 'resultdia',
+    loadChildren: () => import('./resultdia/resultdia.module').then( m => m.ResultdiaPageModule)
+  },
+  {
+    path: 'resulthora',
+    loadChildren: () => import('./resulthora/resulthora.module').then( m => m.ResulthoraPageModule)
+  },
+  {
+    path: 'resultados',
+    loadChildren: () => import('./resultados/resultados.module').then( m => m.ResultadosPageModule)
+  },
 
 ];
 
