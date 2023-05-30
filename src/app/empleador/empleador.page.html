@@ -1,0 +1,44 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="end" class="menu-burguer">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-img src="../../assets/images/aliadas-logo.png" class="logo"></ion-img>
+  </ion-toolbar>
+  <ion-img src="../../assets/images/color-top.jpg" class="bar-logo"></ion-img>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large"></ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-content class="content">
+    <div><img src="../../assets/images/trabajo-encabezado.jpeg" alt="Título Empleadores"></div>
+    <div>
+      <img src="../../assets/images/normas-internacionales.jpg" alt="Normas Internacionales">
+    </div>
+    <div>
+      <img src="../../assets/images/normas-nacionales.jpg" alt="Normas Nacionales">
+    </div>
+    <div>
+      <img src="../../assets/images/salario-digno.jpg" alt="Salario Digno">
+    </div>
+    <div>
+      <img src="../../assets/images/seguridad-social.jpg" alt="Seguridad Social">
+    </div>
+    <div>
+      <img src="../../assets/images/prestaciones-sociales.jpg" alt="Prestacioens Sociales">
+    </div>
+    <div>
+      <img src="../../assets/images/trabajo-domestico-en-cifras-infografia.jpg" alt="Cifras Trabajo Doméstico">
+    </div>
+    <div class="container-encuesta">
+      <div>Ser empleador/a y derechos de las trabajadoras domésticas</div>
+      <div>
+        <ion-button class="button-encuesta" [routerLink]="['/encuesta']">Hacer Encuesta</ion-button>
+      </div>
+    </div>
+  </ion-content>

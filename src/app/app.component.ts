@@ -14,8 +14,9 @@ export class AppComponent {
     { title: 'Libertad Sindical', url: '/libertadsindical', icon: 'people' },
     { title: 'Actualidad', url: '/noticias', icon: 'megaphone' },
     { title: 'Denuncia', url: '/denuncias', icon: 'warning' },
+    { title: 'Empleador', url: '/empleador', icon: 'thumbs-up' },
     { title: 'Organizaciones que nos apoyan', url: '/organizaciones', icon: 'heart' },
-    { title: 'Sobre Aliadas', url: '/sobrealiadas', icon: 'thumbs-up' },
+    { title: 'Sobre Aliadas', url: '/sobrealiadas', icon: 'information-circle' },
     { title: 'Términos y Condiciones', url: '/privacidad', icon: 'document' },
   ];
   arrFormularioPrincipal: any[];

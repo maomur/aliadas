@@ -111,6 +111,14 @@ const routes: Routes = [
     path: 'resultados',
     loadChildren: () => import('./resultados/resultados.module').then( m => m.ResultadosPageModule)
   },
+  {
+    path: 'empleador',
+    loadChildren: () => import('./empleador/empleador.module').then( m => m.EmpleadorPageModule)
+  },
+  {
+    path: 'encuesta',
+    loadChildren: () => import('./encuesta/encuesta.module').then( m => m.EncuestaPageModule)
+  },
 
 ];
 
